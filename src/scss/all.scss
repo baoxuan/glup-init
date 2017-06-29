@@ -106,6 +106,8 @@ textarea {
     -webkit-appearance: none;
 }
 
+
+
 textarea {
     resize: none;
 }
@@ -120,9 +122,860 @@ a:hover {
     color: #333;
     text-decoration: none;
 }
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+$green:#51caab;
+$dgreen:#4fbcc1;
+$lgreen:#56cfac;
+$gray:#999;
+$red:#ff0000;
 
-.header {
-    color: blue;
+
+
+body {
+    font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Microsoft JhengHei", sans-serif;
+    background: #f1f0f2;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: #666;
+}
+
+.Header {
+    height: 91px;
+    .top {
+        height: 29px;
+        line-height: 29px;
+        border-bottom: 1px solid #eee;
+        font-size: 12px;
+        background: #f9f9f9;
+    }
+    .right li {
+        float: left;
+        padding: 0 10px;
+        color: #999;
+        a {
+            color: #999;
+        }
+    }
+}
+
+.wrap {
+    width: 990px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.head {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    .logo {
+        height: 60px;
+        float: left;
+    }
+    .nav {
+        float: right;
+        height: 100%;
+        ul{
+            margin-right: -25px;
+        }
+        li {
+            float: left;
+            font-size: 15px;
+            color: #444;
+            line-height: 57px;
+            padding: 0 25px;
+            position: relative;
+            &.hover,
+            &:hover {
+                border-bottom: 3px solid $green;
+            }
+            &.dropMenu {
+                position: relative;
+                &:before {
+                    content: "";
+                    width: 12px;
+                    height: 8px;
+                    display: inline-block;
+                    background-image: url(../images/arrow.png);
+                    position: absolute;
+                    top: 25px;
+                    right: 5px;
+                }
+                &:hover:before {
+                    background-position: 0px -25px;
+                }
+                 &:hover .menu{
+                    display: block;
+                 }
+
+            }
+        }
+    }
+}
+
+.menu {
+    width: 110px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    display: none;
+    z-index: 100;
+    dt {
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        text-align: center;
+        color: #5e5e5e;
+        background: #fff;
+        font-weight: normal;
+        a {
+            color: $green;
+            display: block;
+            &:hover {
+                color: #fff;
+                background: $green;
+            }
+        }
+    }
+}
+
+
+.ppCarousel {
+  position: relative; }
+
+.swiper-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 280px; }
+
+.swiper-slide {
+  float: left;
+  box-sizing: content-box; }
+
+/* Arrows */
+.arrow-left,
+.arrow-right {
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 32px;
+    height: 32px;
+    right: 40px;
+    left: auto;
+    margin-top: -16px;
+    overflow: hidden;
+    background: rgba(0,0,0,.2) no-repeat 50% 50%;
+    background-image: url(../images/left_arrow.png);
+    background-size: 7px 11px;
+    border-radius: 32px;
+    text-indent: -999em;
+    opacity: 1;
+    transition: opacity .2s;}
+
+.swiper-container:hover .arrow-left,
+.swiper-container:hover .arrow-right {
+  opacity: 1; }
+
+
+.arrow-right {
+        left:40px;
+        right: auto;
+        transform: rotate(-180deg);
+}
+
+
+// 登录框
+.opacityWrap {
+    height: 260px;
+    width: 270px;
+    z-index: 99;
+    background: rgba(254, 254, 254, 0.5);
+    text-align: center;
+    box-shadow: inset 0 4px 1px rgba(82, 82, 82, .3);
+    position: absolute;
+    top: -270px;
+    right: 0;
+    border-radius: 5px;
+    h3 {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #999;
+        font-weight: normal;
+    }
+    .Btn{
+        width: 230px;
+    }
+    .opacity-content {
+        margin: 20px;
+        color: #999;
+        height: 85px;
+        p{
+            padding: 20px 0;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    .opacityLogin {
+        color: #ccc;
+        font-size: 12px;
+        margin: 15px auto 0;
+        width: 210px;
+        a {
+            color: #3fc7b1;
+        }
+    }
+}
+
+
+
+
+
+.warning{
+    border:1px solid #ffdcd9;
+    background: #ffdcd9;
+    color: #666;
+    margin: 15px 0;
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+    padding: 0 30px;
+    border-radius: 5px;
+    position: relative;
+    i{
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        background: url(../images/close.png) no-repeat center;
+        background-size: 100%;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+    }
+}
+
+.btnBox{
+    text-align: center;
+    margin: 50px 0;
+}
+
+.Btn{
+    width: 210px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    &.Btn-sm{
+        width: 140px;
+        height: 33px;
+        line-height: 33px;
+        font-size: 14px;
+    }
+    &.greenBtn{
+        background: $green;
+        background: -webkit-linear-gradient(left, $dgreen, $lgreen);
+        background: -ms-linear-gradient(left, $dgreen, $lgreen);
+        color: #fff; 
+        border: 1px solid $green;  
+        &[disabled]{
+        background: #ececec;
+        border:1px solid #ececec;
+      }    
+    }
+    &.whiteBtn{
+        background: #fff;
+        border:1px solid $green;
+        color: $green;
+
+    }
+}  
+    
+// 面包屑
+
+.breadcrumb {
+  padding: 20px 0 0;
+  background: #f1f0f2;
+  position: relative;
+  > li {
+    display: inline-block;
+    color: $green;
+    + li:before {
+      content: "/"; // Unicode space added since inline-block means non-collapsing white-space
+      padding: 0 8px;
+      color: #999;
+    }
+    a{
+        color: $green;
+    }
+  }
+  > .active {
+    color: #999;
+  }
+  .Btn{
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 15px;
+    text-align: center;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+.container{
+    padding:15px 30px;
+}
+.title{
+    font-size: 26px;
+    line-height: 45px;
+    color: #323232;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        height: 1px;
+        width: 100px;
+        background: $green;
+        display: inline-block;
+    }
+    .subTitle{
+        float: right;
+        font-size: 14px;
+        color: $gray;
+        i{
+            color: $red;
+        }
+    }
+}
+
+.group{
+    margin: 20px 0;
+    .group-title{
+        font-size: 16px;
+        height: 40px;
+        line-height:40px;
+        text-indent: 20px;
+        .subTitle{
+            color: $red;
+            font-size: 12px;
+            float: right;
+        }
+    }
+    .control-label{
+        font-size: 12px;
+        color: #666;
+        height: 36px;
+        line-height:36px;
+        text-align: right;
+        font-weight: normal;
+        &.center{
+            text-align: center;
+        }
+    }
+    .group-container{
+        background: #fafafa;
+        padding: 25px 25px 5px;
+        border: 1px dashed #eee;
+        border-radius: 5px;
+    }
+    .form-left{
+        float: left;
+        width: 50%;
+        position: relative;
+        padding-bottom: 5px;
+    }
+    th, tr{
+        text-align: center;
+    }
+}
+.control-label.required {
+    position: relative;
+    &:before {
+        content: "*";
+        color: #ff0000;
+    }
+}
+
+
+.queue .badge{
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    background: #ff0000;
+}
+
+// 下拉框使用自定义图片
+select{
+    background: url(../images/arrowdown.png) no-repeat scroll 98% center #fff;
+    background-size: 15px;
+}
+.toolIcons{
+    position: absolute;
+    top: 5px;
+    right: -17px;
+    background: url(../images/toolicons.png) no-repeat center;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.toolIcons .popover{
+    left: -140px;
+    top: 30px;
+    margin-left: 50%;
+    width: 280px;
+    .popover-title{
+        background: #fff;
+        text-align: center;
+        font-size: 12px;
+    }
+     .popover-content{
+        text-align: justify;
+        p{
+            padding: 2px 0;
+        }
+     }
+}
+.toolIcons:hover .popover{
+    display: block;
+}
+// 错误提示
+.pr label.error{
+    position: absolute;
+    bottom: -25px;
+    font-weight: normal;
+}
+
+// 改造modal 样式
+.modal{
+    .modal-header{
+        text-align: center;
+        font-size: 18px;
+        border-bottom: none;
+        color: #999;
+        padding-bottom: 0px;
+    }
+    .modal-footer{
+        text-align: center;
+        border-top: none;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    .modal-border{
+        border-top: 1px solid #e5e5e5;   
+        border-bottom: 1px solid #e5e5e5;
+        margin: 10px 0;
+       p{ 
+            padding-bottom: 15px;
+            line-height: 22px;
+       }
+    }
+
+}
+
+.tip{
+    display: inline-block;
+    width: 870px;
+    text-align: center;
+    position: relative;
+    height: 30px;
+    margin-bottom: 20px;
+    color: #999;
+    &:before,&:after{
+        content: "";
+        position: absolute;
+        top: 5px;
+        display: block;
+        width: 340px;
+        height: 0;
+        border-bottom: 1px dashed #ddd;
+    }
+    &:before{
+        left: 50px;
+    }
+    &:after{
+        right: 50px;
+    }
+    i{
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-left: -8px;
+        background: url(../images/arrowdown.png) no-repeat center;
+        background-size: 14px;
+    }
+    &.selected{
+        i{
+            transform:rotate(180deg);
+        }
+    }
+}
+
+.searchBox{
+    margin: 20px 0;
+}
+.form-inline {
+    label {
+        font-weight: normal;
+    }
+    .form-control {
+        width: auto;
+        margin: 0 10px;
+    }
+    select.input-sm{
+        line-height: 1.5;
+        width: 150px;
+    }
+}
+
+
+// 列表
+.List {
+    margin: 30px 20px;  
+    li {
+        margin-top: 20px;
+        background: #fafafa;
+        padding: 25px 25px 5px;
+        border: 1px dashed #eee;
+        border-radius: 5px;
+        color: #999;
+        .col-xs-3 {
+            padding: 15px 0;
+        }
+        .btnBox {
+            margin: 10px 0;
+            a {
+                margin: 0 10px;
+            }
+        }
+        i {
+            position: absolute;
+            left: 65px;
+            top: 35px;
+            color: #ccc;
+            font-size: 12px;
+        }
+    }
+
+
+}
+
+.textBox{
+    position: relative;
+    margin:10px 20px;
+    color: #999;
+    &:before{
+        content: "*";
+        position: absolute;
+        top: 0px;
+        left: -6px;
+        color: $red;
+    }
+    p{
+    height: 38px;
+    line-height: 20px;
+    width: 360px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    }
+}
+.progressBox{
+    position: relative;
+    margin:10px 0px;
+    color: #999; 
+    width: 400px; 
+    .progressMsg p{
+        float: left;
+        display: inline-block;
+        width: 33.3%;
+    }
+    .progress{
+        height: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .progress-bar{
+        background-color: $green;
+    }
+}
+
+.radioBox{
+    padding: 0 25px;
+  label{
+    position: relative;
+    font-weight: normal;
+    margin:10px 30px;
+    height: 30px;
+    line-height: 30px;
+    &:before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 7px;
+        left: -20px;
+        border: 1px solid $gray;
+        width: 14px;
+        height: 14px;
+        border-radius: 30px;       
+        }
+    &.checked{
+            &:after{
+                position: absolute;
+                content: "";
+                display: inline-block;
+                top: 10px;
+                left: -17px;
+                width: 8px;
+                height: 8px;
+                background: $gray;
+                border-radius: 30px;           
+            }
+    }
+}  
+}
+.total{
+    margin: 20px;
+    height: 35px;
+    line-height: 35px;
+    color: #999;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    background-color: $green;
+    border-color: $green;
+}
+
+// 注册页
+.regContainer {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 930px;
+  height: 450px;
+  background: url(../images/forget-bg.jpg?v=1) no-repeat center #fff; }
+
+.reg-wrap {
+    width: 430px;
+    margin-top: 50px;
+    label{
+        font-weight: normal;
+    }
+    .form-group{
+        margin-bottom: 25px;
+    }
+ }
+
+
+.input-group{
+    .input-group-btn{
+        img{
+            width: 90px;
+            height: 35px;
+        }
+    }
+}
+
+//悬浮框
+.fix-container{
+    position: fixed;
+    top: 170px;
+    right: 10px;
+    z-index: 100;
+    .box{
+        padding: 2px 5px;
+        text-align: center;
+        color: #fff;
+        background: $green;
+        position: relative;
+        &:hover{
+            .step{
+                display: block;
+            }
+        }
+
+        .step{
+            display: none;
+            box-shadow: inset 1px 1px #eee;
+            position: absolute;
+            left: -140px;
+            top: -1px;
+            width: 140px;
+            padding: 5px 15px;
+            color: #999;
+            background: #fff;
+            font-size: 12px;
+            li{
+                height: 35px;
+                line-height: 35px;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                &:before,&:after{
+                    z-index: 101;
+                    content:"";
+                    position: absolute;
+                    bottom: -15px;
+                    left: 50%;
+                    margin-left: -8px;
+                    width:0;
+                    height: 0;
+                    border:8px solid transparent;
+                    border-top-color: #fff;
+                }
+                &:before{
+                    border-top-color: #eee;
+                    bottom: -16px;  
+                }
+                &:last-child{
+                    border-bottom: none;
+                    &:before,&:after{
+                        border-top-color: transparent;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+// 联系我们
+.concat-Box{
+    padding: 30px 0;
+    color: #999;
+    border-bottom: 1px dashed #eee;
+    h3{
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+    p{
+        text-indent: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+}
+
+.slide-Box{
+
+    padding: 30px 0;
+    color: #999;
+    border-bottom: 1px dashed #eee;
+    h3{
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: normal;
+        cursor: pointer;
+        span{
+            float: right;
+            font-size: 14px;
+        }
+    }
+    p{
+        text-indent: 30px;
+        line-height: 30px;
+        font-size: 13px;
+        display: none;
+    }
+    .handleBox{
+        float: right;
+        color: #999;
+        button{
+            border: none;
+            color: $green;
+            background: transparent;
+            margin: 0 10px;
+        }
+    }
+}
+
+
+.m20{
+    margin: 0 20px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.mt20{
+    margin-top: 20px;
+}
+
+.m100{
+    margin: 100px 0;
+}
+
+.error{
+    color: #ff0000;
+}
+
+.btn-default{
+    color: $green;
+    width: 90px;
+    &:disabled{
+        color: #999;
+    }
+}
+.btn-green{
+    background: $green;
+    color: #fff;
+    border: 1px solid $green;
+    &:disabled{
+        color: #999;
+    }
+    &:hover{
+        color: #fff;
+    }
+}
+
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+
+.pr{
+    position: relative;
+}
+
+.bgf{
+    background: #fff;
+}
+.center{
+    text-align: center;
+}
+.green{
+    color: $green;
+}
+
+.btnlink{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -80px;
+}
+
+
+body.modal-open{
+    margin-right: 0px;
 }
 
 .clearfix:after,
